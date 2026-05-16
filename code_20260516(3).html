@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三角洲跑刀全攻略｜零基础稳赚｜全地图路线｜物资筛选｜撤离教学</title>
+<style>
+:root{
+    --main:#ff7700;
+    --main-dark:#e06600;
+    --bg:#f4f5f7;
+    --card:#ffffff;
+    --text:#222222;
+    --text-gray:#666666;
+    --border:#e5e7eb;
+    --shadow:0 2px 10px rgba(0,0,0,0.05);
+    --high:#fff2e6;
+}
+[data-theme="dark"]{
+    --main:#ff8822;
+    --main-dark:#ff7700;
+    --bg:#0f1117;
+    --card:#1a1c23;
+    --text:#e8e8e8;
+    --text-gray:#a0a0a0;
+    --border:#2c2f38;
+    --shadow:0 2px 12px rgba(0,0,0,0.2);
+    --high:#2b2012;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:"微软雅黑",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:0.3s ease;
+}
+.nav{
+    position:sticky;
+    top:0;
+    background:var(--card);
+    border-bottom:1px solid var(--border);
+    z-index:99;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    height:62px;
+}
+.logo{
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+}
+.nav-menu{
+    display:flex;
+    gap:8px;
+}
+.nav-menu a{
+    text-decoration:none;
+    color:var(--text-gray);
+    font-size:14px;
+    padding:7px 13px;
+    border-radius:20px;
+    transition:0.25s;
+}
+.nav-menu a.active{
+    background:var(--main);
+    color:#fff;
+}
+.nav-menu a:hover{
+    background:var(--high);
+    color:var(--main);
+}
+.theme{
+    border:none;
+    background:none;
+    font-size:18px;
+    cursor:pointer;
+    color:var(--text);
+}
+.container{
+    max-width:1320px;
+    margin:20px auto;
+    padding:0 16px;
+}
+.search-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:24px;
+}
+.search-box input{
+    flex:1;
+    padding:13px 18px;
+    border:1px solid var(--border);
+    border-radius:26px;
+    background:var(--card);
+    color:var(--text);
+    outline:none;
+    font-size:14px;
+}
+.search-box button{
+    padding:13px 22px;
+    border-radius:26px;
+    border:none;
+    background:var(--main);
+    color:#fff;
+    cursor:pointer;
+    transition:0.2s;
+}
+.search-box button:hover{
+    background:var(--main-dark);
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+    gap:20px;
+}
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+    box-shadow:var(--shadow);
+    transition:0.25s;
+}
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+.card h3{
+    color:var(--main);
+    margin-bottom:10px;
+    font-size:17px;
+}
+.tag-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:12px;
+}
+.tag{
+    font-size:12px;
+    padding:3px 9px;
+    border-radius:12px;
+    background:var(--high);
+    color:var(--main);
+}
+.card p{
+    font-size:14px;
+    color:var(--text-gray);
+    line-height:1.75;
+}
+.footer{
+    text-align:center;
+    padding:30px;
+    font-size:13px;
+    color:var(--text-gray);
+    border-top:1px solid var(--border);
+    margin-top:40px;
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+    <div class="logo">🔪 三角洲跑刀全攻略站</div>
+    <div class="nav-menu">
+        <a href="#" class="active" data-all>全部攻略</a>
+        <a href="#" data-base>新手基础</a>
+        <a href="#" data-map>全地图路线</a>
+        <a href="#" data-loot>物资筛选</a>
+        <a href="#" data-skill>进阶技巧</a>
+    </div>
+    <button class="theme" id="themeBtn">🌙</button>
+</div>
+
+<div class="container">
+    <div class="search-box">
+        <input id="searchInput" placeholder="搜索：跑刀路线、物资、撤离、出生点、赚钱技巧">
+        <button id="searchBtn">搜索攻略</button>
+    </div>
+
+    <div class="grid" id="cardList">
+
+<div class="card" data-type="base">
+    <h3>跑刀核心原理｜为什么零成本稳赚不赔</h3>
+    <div class="tag-list">
+        <span class="tag">基础原理</span>
+        <span class="tag">零亏损</span>
+        <span class="tag">新手必学</span>
+    </div>
+    <p>
+跑刀是三角洲行动<strong>唯一零风险赚钱打法</strong>。
+完全不带护甲、不带主武器、不带弹挂、不带昂贵装备。
+全身只有：匕首+少量药品+烟雾弹。
+就算白给，<strong>没有任何损失</strong>。
+只要成功撤离一次，必赚几W~几十W哈夫币。
+核心宗旨：<strong>不打架、不贪物资、活着第一、撤离为王</strong>
+    </p>
+</div>
+
+<div class="card" data-type="base">
+    <h3>标准跑刀配装｜唯一正确出装</h3>
+    <div class="tag-list">
+        <span class="tag">配装教学</span>
+        <span class="tag">零损耗</span>
+    </div>
+    <p>
+✅ <strong>必带物品</strong>
+1. 战术匕首（开箱最快、砍锁必备）
+2. 急救包 ×2（只带急救，不带绷带）
+3. 烟雾弹 ×1（撤离保命核心）
+4. 最小便携背包
+
+❌ <strong>绝对不要带</strong>
+任何头盔、护甲、枪、子弹、弹挂、大背包。
+带任何装备，白给就是亏钱，违背跑刀本质。
+    </p>
+</div>
+
+<div class="card" data-type="base">
+    <h3>跑刀每局时间轴｜精确到分钟流程</h3>
+    <div class="tag-list">
+        <span class="tag">全局流程</span>
+        <span class="tag">时间规划</span>
+    </div>
+    <p>
+0-3分钟：<strong>绝对苟住</strong>，原地蹲伏，听脚步，等大佬互打。
+3-8分钟：开始安全点位搜物资，只摸高价值点。
+8-11分钟：停止搜物资，开始向撤离点转移。
+最后3分钟：封烟、卡点、准备撤离。
+<strong>绝对不要最后一分钟赶路</strong>，百分百被截胡白给。
+    </p>
+</div>
+
+<div class="card" data-type="map">
+    <h3>长弓溪谷｜最稳新手跑刀路线</h3>
+    <div class="tag-list">
+        <span class="tag">长弓溪谷</span>
+        <span class="tag">高收益</span>
+        <span class="tag">低风险</span>
+    </div>
+    <p>
+【推荐出生点】渔村外侧、公路外围、加油站边缘
+【避坑出生】行政楼、别墅、主峰（全是满装大佬）
+
+【固定最优路线】
+渔村保险箱 → 渔村小屋文件柜 → 加油站电脑+保险箱 → 黄金三角外围小房 → 公路撤离点
+
+【撤离选择】
+优先公路常驻撤离点，最安全、没人蹲。
+局势乱再选小船撤离。
+【禁忌】绝不进主楼、绝不贪二楼物资！
+    </p>
+</div>
+
+<div class="card" data-type="map">
+    <h3>零号大坝｜低风险捡漏跑刀路线</h3>
+    <div class="tag-list">
+        <span class="tag">零号大坝</span>
+        <span class="tag">捡漏专用</span>
+    </div>
+    <p>
+【推荐出生】货运区、地下通道外围、西区空地
+【避开出生】中控楼、行政主楼、电梯口
+
+【最优路线】
+货运区双保险箱 → 地下仓库工具箱 → 西区办公室电脑 → 外围撤离点
+
+【大坝专属技巧】
+大坝人最多，开局必须苟3分钟！
+等玩家互相淘汰完，再进去捡漏物资。
+不主动打架，只捡别人剩下的高价值。
+    </p>
+</div>
+
+<div class="card" data-type="map">
+    <h3>零号农场｜冷门暴富跑刀路线</h3>
+    <div class="tag-list">
+        <span class="tag">零号农场</span>
+        <span class="tag">冷门暴富</span>
+    </div>
+    <p>
+农场玩家最少，竞争最小，新手最适合长期刷钱。
+【推荐出生】麦田外围、仓库外侧
+
+【路线】
+麦田小屋保险箱 → 大仓工具箱 → 办公室机密柜 → 河边撤离
+
+【优势】
+极少有人蹲撤离、物资稳定、大红概率很高。
+适合新手稳定刷百万哈夫币。
+    </p>
+</div>
+
+<div class="card" data-type="loot">
+    <h3>跑刀物资分级｜必捡暴富清单</h3>
+    <div class="tag-list">
+        <span class="tag">物资教学</span>
+        <span class="tag">赚钱核心</span>
+    </div>
+    <p>
+【🌟 必捡暴富物资】
+大红、机密文件、蓝色U盘、金条、金表、钻石、显卡、高级硬盘
+
+【✅ 可捡小件】
+高端镜头、电路板、传感器、精密零件
+
+【❌ 绝对不捡垃圾】
+普通工具、白色杂物、破零件、便宜药品、普通子弹
+跑刀背包极小，<strong>只带最贵的，不带垃圾</strong>
+    </p>
+</div>
+
+<div class="card" data-type="skill">
+    <h3>撤离机制详解｜避免最后白给</h3>
+    <div class="tag-list">
+        <span class="tag">撤离技巧</span>
+        <span class="tag">机制教学</span>
+    </div>
+    <p>
+【绿色常驻撤离点】
+全程可用、不用等、最安全、优先选择。
+
+【红色限时撤离点】
+限时开启、多人争抢、极易被蹲、新手别碰。
+
+【撤离禁忌】
+1. 不要贴撤离点站着不动（必死）
+2. 最后2分钟不要搜物资
+3. 撤离前必扔烟雾封视野
+4. 听到脚步立刻换位，不要原地蹲守
+    </p>
+</div>
+
+<div class="card" data-type="skill">
+    <h3>跑刀高阶意识｜听声辨位+全程避战</h3>
+    <div class="tag-list">
+        <span class="tag">进阶意识</span>
+        <span class="tag">防白给</span>
+    </div>
+    <p>
+跑刀玩家<strong>绝对不主动交战</strong>。
+听到跑步声：立刻蹲伏静止。
+听到枪声：立刻远离交战区。
+听到换弹、切枪：附近有人，绕路撤离。
+
+核心意识：
+满装玩家不怕死、跑刀玩家怕死。
+我们的优势是：<strong>灵活、无声、绕路、苟活</strong>
+    </p>
+</div>
+
+<div class="card" data-type="skill">
+    <h3>单人/双人跑刀打法｜双人配合细节</h3>
+    <div class="tag-list">
+        <span class="tag">双人跑刀</span>
+        <span class="tag">配合技巧</span>
+    </div>
+    <p>
+【单人跑刀】全程静默、不暴露、优先绕路、苟活第一。
+【双人跑刀】一人探点、一人架后，互相报点；
+物资平分，一人被冲另一人立刻撤离，不救队友；
+撤离时双烟封视野，大幅提高撤离成功率。
+双人收益比单人更高，风险更低。
+    </p>
+</div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <p>© 2026 三角洲跑刀攻略站｜谷歌广告（注册AdSense后替换ID自动赚钱）</p>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-【你的谷歌ID】" crossorigin="anonymous"></script>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-【你的谷歌ID】" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<script>
+const toggle = document.getElementById('themeBtn');
+toggle.onclick = ()=>{
+    document.body.toggleAttribute('data-theme','dark');
+    toggle.innerText = document.body.hasAttribute('data-theme') ? '☀️' : '🌙';
+}
+
+const list = document.getElementById('cardList');
+const cards = list.querySelectorAll('.card');
+document.querySelector('[data-all]').onclick = ()=>{
+    cards.forEach(c=>c.style.display='block');
+}
+document.querySelector('[data-base]').onclick = ()=>{
+    cards.forEach(c=>c.style.display = c.dataset.type==='base' ? 'block' : 'none');
+}
+document.querySelector('[data-map]').onclick = ()=>{
+    cards.forEach(c=>c.style.display = c.dataset.type==='map' ? 'block' : 'none');
+}
+document.querySelector('[data-loot]').onclick = ()=>{
+    cards.forEach(c=>c.style.display = c.dataset.type==='loot' ? 'block' : 'none');
+}
+document.querySelector('[data-skill]').onclick = ()=>{
+    cards.forEach(c=>c.style.display = c.dataset.type==='skill' ? 'block' : 'none');
+}
+
+const sbtn = document.getElementById('searchBtn');
+const kw = document.getElementById('searchInput');
+sbtn.onclick = ()=>{
+    const key = kw.value.toLowerCase();
+    cards.forEach(c=>{
+        c.style.display = c.innerText.toLowerCase().includes(key) ? 'block' : 'none';
+    })
+}
+kw.onkeyup = e=>{
+    if(e.key==='Enter') sbtn.click();
+}
+</script>
+</body>
+</html>
